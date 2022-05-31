@@ -53,3 +53,16 @@ jobs:
           echo "RUNNER_OS: ${RUNNER_OS}"
         env:
           fichero: "hola.py"        
+
+  if-Windows-else:
+    runs-on: macos-latest
+    steps:
+      - name: Condition 1
+        if: runner.os == 'Windows'
+        run: echo "The operating system on the runner is $env:RUNNER_OS."
+      - name: Condition 2
+        if: runner.os == 'Windows'
+        run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
+        
+
+
