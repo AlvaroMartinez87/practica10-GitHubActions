@@ -56,13 +56,19 @@ jobs:
 
   if-Windows-else:
     runs-on: macos-latest
+    env:
+      Python: "3.8"
     steps:
       - name: Condition 1
         if: runner.os == 'Windows'
         run: echo "The operating system on the runner is $env:RUNNER_OS."
+        env:
+          fichero: "hola.py"
       - name: Condition 2
         if: runner.os == 'Windows'
         run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
-        
+        env:
+          fichero: "hola.py"
+
 
 
